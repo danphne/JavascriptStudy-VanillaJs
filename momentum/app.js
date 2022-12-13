@@ -1,18 +1,14 @@
-const title = document.getElementById("title");
+const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick(){
-  title.style.color = 'blue';
-  console.log('title was clicked');
+  const clickedClass = "clicked";
+  /*if(h1.classList.contains(clickedClass)){
+    h1.classList.remove(clickedClass);
+  }else{
+    h1.classList.add(clickedClass);
+  }*/
+  h1.classList.toggle(clickedClass);
 }
 
-function handleMouseEnter(){
-  title.innerText = "mouse is here!";
-}
 
-function handleMouseLeave(){
-title.innerText = "mouse is gone!";
-}
-
-title.addEventListener("click", handleTitleClick);
-title.addEventListener("mouseenter",handleMouseEnter)
-title.addEventListener("mouseleave",handleMouseLeave)
+h1.addEventListener("click", handleTitleClick);
